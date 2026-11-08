@@ -1,0 +1,161 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=block" rel="stylesheet">
+<style>
+:root{--g:#2bd17e;--g-soft:#9be8bf;--g-deep:#0b3d24;--cream:#f3f0e8}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#000}
+body{width:var(--W);height:var(--H);overflow:hidden;font-family:Inter,sans-serif;color:var(--cream)}
+body.feed{--W:1080px;--H:1350px;--cupW:430px;--cupTop:395px;--table:1010px}
+body.story{--W:1080px;--H:1920px;--cupW:480px;--cupTop:745px;--table:1440px}
+.ad{position:relative;width:var(--W);height:var(--H);overflow:hidden;
+  background:
+   radial-gradient(ellipse 620px 560px at 50% calc(var(--table) - 330px), rgba(43,209,126,.36), rgba(20,110,62,.18) 45%, transparent 75%),
+   radial-gradient(ellipse 1100px 700px at 50% -10%, #0e3a24 0%, transparent 70%),
+   linear-gradient(180deg,#061a10 0%,#030c07 60%,#010402 100%);}
+/* back wall subtle vertical fluting */
+.flute{position:absolute;left:0;right:0;top:0;height:var(--table);opacity:.22;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0 38px,rgba(255,255,255,.07) 38px 40px,rgba(0,0,0,.35) 40px 44px,rgba(0,0,0,0) 44px 80px);
+  -webkit-mask-image:radial-gradient(ellipse 700px 900px at 50% 60%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 700px 900px at 50% 60%,#000 20%,transparent 75%)}
+/* gobo leaf shadows */
+.gobo{position:absolute;inset:0;filter:blur(14px);opacity:.75}
+/* bokeh */
+.bokeh{position:absolute;border-radius:50%;filter:blur(2px)}
+/* table */
+.table{position:absolute;left:0;right:0;top:var(--table);bottom:0;
+  background:linear-gradient(180deg,#0b1d13 0%,#040a06 30%,#000 100%)}
+.table::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(155,232,191,.35),transparent)}
+.table::after{content:"";position:absolute;inset:0;opacity:.18;
+  background:radial-gradient(ellipse 500px 60px at 50% 0%,rgba(43,209,126,.6),transparent 70%)}
+.cup,.reflect{position:absolute;left:50%;width:var(--cupW);transform:translateX(-50%)}
+.cup{top:var(--cupTop);z-index:5;filter:drop-shadow(0 0 1px rgba(155,232,191,.4)) drop-shadow(-18px 0 40px rgba(43,209,126,.18))}
+.cup img,.reflect img{width:100%;display:block}
+/* studio light: rim + falloff masked to cup */
+.light{position:absolute;inset:0;-webkit-mask-image:url(cup_pro.png);-webkit-mask-size:100% 100%;mask-image:url(cup_pro.png);mask-size:100% 100%}
+.light.rim{background:linear-gradient(90deg,rgba(120,255,180,.55) 0%,rgba(120,255,180,0) 9%,transparent 88%,rgba(255,255,255,.35) 97%);mix-blend-mode:screen}
+.light.shade{background:linear-gradient(90deg,rgba(0,0,0,.25) 0%,transparent 30%,transparent 62%,rgba(0,0,0,.45) 100%);mix-blend-mode:multiply}
+.light.spec{background:linear-gradient(100deg,transparent 22%,rgba(255,255,255,.28) 25%,rgba(255,255,255,.05) 29%,transparent 31%);mix-blend-mode:screen}
+.drops{position:absolute;inset:0;-webkit-mask-image:url(cup_pro.png);-webkit-mask-size:100% 100%;mask-image:url(cup_pro.png);mask-size:100% 100%}
+.reflect{z-index:2;transform:translateX(-50%) scaleY(-1);opacity:.32;filter:blur(3px);
+  top:calc(var(--cupTop) + var(--cupW) * 1.5157 - 6px);
+  -webkit-mask-image:linear-gradient(0deg,#000 0%,transparent 38%);mask-image:linear-gradient(0deg,#000 0%,transparent 38%)}
+.contact{position:absolute;left:50%;transform:translateX(-50%);width:calc(var(--cupW) * .72);height:34px;border-radius:50%;
+  top:calc(var(--cupTop) + var(--cupW) * 1.5157 - 22px);background:radial-gradient(rgba(0,0,0,.95),transparent 70%);z-index:4}
+
+/* type */
+.eyebrow{position:absolute;top:64px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:18px;
+  font-size:19px;letter-spacing:7px;font-weight:600;color:var(--g-soft)}
+.eyebrow i{display:block;width:56px;height:1px;background:rgba(155,232,191,.5)}
+.title{position:absolute;left:0;right:0;text-align:center;z-index:3}
+.title h1{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;line-height:.86;color:var(--cream);letter-spacing:-2px;
+  text-shadow:0 10px 40px rgba(0,0,0,.5)}
+.title h2{font-weight:600;color:var(--g);letter-spacing:.42em;margin-right:-.42em}
+.feed .title{top:108px}.feed .title h1{font-size:200px}.feed .title h2{font-size:38px;margin-top:14px}
+.story .eyebrow{top:220px}.story .foot{bottom:250px}.story .title{top:285px}.story .title h1{font-size:230px}.story .title h2{font-size:46px;margin-top:20px}
+
+.callout{position:absolute;z-index:6;display:flex;align-items:center;gap:14px}
+.callout .dot{width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 0 5px rgba(43,209,126,.2);flex:none}
+.callout .line{height:1px;background:linear-gradient(90deg,rgba(155,232,191,.7),rgba(155,232,191,.25));flex:none}
+.callout .txt{font-size:15px;letter-spacing:3px;font-weight:600;color:var(--g-soft);line-height:1.5;text-transform:uppercase}
+.callout .txt b{display:block;font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;font-size:30px;letter-spacing:0;color:var(--cream);text-transform:none;line-height:1.1}
+.callout.l{flex-direction:row-reverse;text-align:right}
+
+.price{position:absolute;z-index:6;text-align:center}
+.price .ring{width:208px;height:208px;border-radius:50%;border:1px solid rgba(155,232,191,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 35%,rgba(43,209,126,.22),rgba(0,0,0,.55) 70%);backdrop-filter:blur(6px);
+  box-shadow:inset 0 0 0 8px rgba(0,0,0,.35),inset 0 0 0 9px rgba(155,232,191,.18),0 25px 60px rgba(0,0,0,.6)}
+.price small{font-size:14px;letter-spacing:5px;font-weight:600;color:var(--g-soft)}
+.price strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:74px;line-height:1;color:var(--cream);margin-top:6px;letter-spacing:-1px}
+.price strong sup{font-size:34px;color:var(--g);vertical-align:top;position:relative;top:10px;margin-left:3px}
+
+.foot{position:absolute;left:64px;right:64px;bottom:58px;display:flex;justify-content:space-between;align-items:flex-end;z-index:7}
+.foot .tag{font-family:'DM Serif Display',serif;font-style:italic;font-size:36px;line-height:1.15;color:var(--cream)}
+.foot .tag span{color:var(--g)}
+.foot .meta{font-size:14px;letter-spacing:5px;font-weight:600;color:rgba(155,232,191,.75);margin-top:12px}
+.btn{display:flex;align-items:center;gap:14px;background:var(--g);color:#02140a;font-weight:700;font-size:20px;letter-spacing:3px;padding:20px 30px 20px 34px;border-radius:999px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 18px 40px rgba(43,209,126,.28)}
+.btn svg{width:22px;height:22px}
+.grain{position:absolute;inset:0;z-index:20;opacity:.09;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.vign{position:absolute;inset:0;z-index:19;pointer-events:none;background:radial-gradient(ellipse 75% 70% at 50% 52%,transparent 55%,rgba(0,0,0,.55) 100%)}
+.bean{position:absolute;z-index:6}
+</style></head>
+<body class="feed">
+<div class="ad">
+  <div class="flute"></div>
+  <svg class="gobo" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMin slice" width="100%" height="100%">
+    <defs><path id="lf" d="M0 0 C70 -46 200 -46 300 0 C200 46 70 46 0 0Z"/></defs>
+    <g fill="#000" opacity=".85">
+      <g transform="translate(-60 40) rotate(28)"><use href="#lf"/><use href="#lf" transform="translate(140 -10) rotate(-38)"/><use href="#lf" transform="translate(110 25) rotate(42)"/><use href="#lf" transform="translate(250 10) rotate(12)"/></g>
+      <g transform="translate(1150 120) rotate(150)"><use href="#lf"/><use href="#lf" transform="translate(130 -10) rotate(-30)"/><use href="#lf" transform="translate(100 25) rotate(38)"/></g>
+    </g>
+  </svg>
+  <div id="bokeh"></div>
+
+  <div class="eyebrow"><i></i>COMO · ESPRESSO BAR<i></i></div>
+  <div class="title"><h1>Freddo</h1><h2>CAPPUCCINO</h2></div>
+
+  <div class="table"></div>
+  <div class="reflect"><img src="cup_pro.png" alt=""></div>
+  <div class="contact"></div>
+  <div class="cup" id="cup">
+    <img src="cup_pro.png" alt="">
+    <div class="light shade"></div>
+    <div class="light rim"></div>
+    <div class="light spec"></div>
+    <svg class="drops" id="drops" viewBox="0 0 795 1205" preserveAspectRatio="none" width="100%" height="100%"></svg>
+  </div>
+
+  <div class="callout l" id="c1"><span class="dot"></span><span class="line" style="width:70px"></span><span class="txt"><b>Velvet cold foam</b>Whipped to order</span></div>
+  <div class="callout l" id="c2"><span class="dot"></span><span class="line" style="width:70px"></span><span class="txt"><b>Double espresso</b>Shaken over ice</span></div>
+
+  <div class="price" id="price"><div class="ring"><small>ONLY</small><strong>3.00<sup>€</sup></strong></div></div>
+
+  <div id="beans"></div>
+
+  <div class="foot">
+    <div><div class="tag">Cold espresso.<br>Warm <span>vibes.</span></div><div class="meta">ESPRESSO YOURSELF</div></div>
+    <div class="btn">ORDER NOW <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </div>
+  <div class="vign"></div>
+  <div class="grain"></div>
+</div>
+<script>
+const story=location.hash==='#story'; if(story) document.body.className='story';
+const cs=getComputedStyle(document.body);
+const W=parseFloat(cs.getPropertyValue('--W')),H=parseFloat(cs.getPropertyValue('--H'));
+const cupW=parseFloat(cs.getPropertyValue('--cupW')),cupTop=parseFloat(cs.getPropertyValue('--cupTop')),table=parseFloat(cs.getPropertyValue('--table'));
+const k=cupW/795, cupL=(W-cupW)/2;
+// seeded rng
+let s=7;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+// condensation droplets (cup body only, y 300..1180 in cup px)
+let d='<defs><radialGradient id="dg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(255,255,255,.0)"/><stop offset=".7" stop-color="rgba(255,255,255,.06)"/><stop offset="1" stop-color="rgba(0,0,0,.22)"/></radialGradient><filter id="sb"><feGaussianBlur stdDeviation="1.2"/></filter></defs><g filter="url(#sb)">';
+for(let i=0;i<120;i++){const x=95+r()*610,y=430+r()*740,rr=2.5+Math.pow(r(),2.2)*10;
+ d+=`<ellipse cx="${x}" cy="${y}" rx="${rr}" ry="${rr*1.2}" fill="url(#dg)"/><ellipse cx="${x-rr*.3}" cy="${y-rr*.4}" rx="${rr*.3}" ry="${rr*.32}" fill="rgba(255,255,255,${.18+r()*.22})"/><path d="M${x-rr*.6} ${y+rr*.7} q${rr*.6} ${rr*.4} ${rr*1.2} 0" stroke="rgba(255,255,255,.12)" stroke-width="1" fill="none"/>`;}
+for(let i=0;i<4;i++){const x=130+r()*540,y=520+r()*420,len=80+r()*120;
+ d+=`<path d="M${x} ${y} q${(r()-.5)*6} ${len/2} 0 ${len}" stroke="rgba(255,255,255,.07)" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="${x}" cy="${y+len}" r="5" fill="rgba(255,255,255,.14)"/>`;}
+d+='</g>';
+document.getElementById('drops').innerHTML=d;
+// bokeh
+let b='';for(let i=0;i<(story?26:18);i++){const sz=14+r()*70,x=r()*W,y=r()*(table-200);const a=.05+r()*.16;
+ b+=`<div class="bokeh" style="left:${x}px;top:${y}px;width:${sz}px;height:${sz}px;background:radial-gradient(circle,rgba(155,232,191,${a*1.4}) 0%,rgba(43,209,126,${a}) 55%,rgba(43,209,126,${a*1.6}) 70%,transparent 72%);"></div>`;}
+document.getElementById('bokeh').innerHTML=b;
+// beans
+function bean(x,y,sz,rot,blur,z){return `<svg class="bean" style="left:${x}px;top:${y}px;width:${sz}px;height:${sz*.74}px;filter:blur(${blur}px) drop-shadow(0 ${sz*.12}px ${sz*.1}px rgba(0,0,0,.8));transform:rotate(${rot}deg);z-index:${z}" viewBox="0 0 100 74">
+ <defs><radialGradient id="bg${x|0}" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#8a5634"/><stop offset=".45" stop-color="#4e2c18"/><stop offset="1" stop-color="#1c0d06"/></radialGradient></defs>
+ <ellipse cx="50" cy="37" rx="47" ry="34" fill="url(#bg${x|0})"/>
+ <path d="M12 46 C34 26 58 50 88 26" stroke="#120804" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+ <path d="M14 42 C34 24 58 46 86 23" stroke="rgba(255,210,170,.18)" stroke-width="1.5" fill="none"/>
+ <ellipse cx="34" cy="20" rx="16" ry="6" fill="rgba(255,230,200,.18)" transform="rotate(-18 34 20)"/></svg>`;}
+const by=table+ (story?40:20);
+document.getElementById('beans').innerHTML=
+  bean(cupL-120,by+10,70,-20,0,6)+bean(cupL-50,by+40,54,35,0,6)+bean(cupL+cupW+30,by+18,62,160,0,6)+
+  (story?bean(-50,H-640,170,25,7,8):'')+bean(W-150,by-(story?520:430),110,-30,5,1);
+// callouts positioned on the cup layers
+function place(id,cy,side){const el=document.getElementById(id);const y=cupTop+cy*k;
+  const rect=el.getBoundingClientRect();el.style.top=(y-rect.height/2)+'px';
+  el.style.right=(W-(cupL+ (side*k)))+'px';}
+place('c1',420,120); place('c2',700,110);
+const p=document.getElementById('price');p.style.left=(cupL+cupW-40)+'px';p.style.top=(cupTop+(story?470:430)*k)+'px';
+</script>
+</body></html>
