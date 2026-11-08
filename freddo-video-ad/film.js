@@ -479,6 +479,10 @@
         const f = 0.95 * Math.exp(-(t - ev.drop) * 9);
         if (f > 0.01) { ctx.fillStyle = `rgba(235,255,244,${f})`; ctx.fillRect(0, 0, W, H); }
       }
+      // ice: a quick cold flash on every cube landing (picture hit on the beat)
+      for (const c of S.cubes) { const d = t - c.t; if (d >= 0 && d < 0.2) { ctx.fillStyle = `rgba(225,255,245,${0.28 * Math.exp(-d * 30)})`; ctx.fillRect(0, 0, W, H); } }
+      // price: flash
+      if (t >= ev.price && t < ev.price + 0.25) { ctx.fillStyle = `rgba(155,232,191,${0.3 * Math.exp(-(t - ev.price) * 25)})`; ctx.fillRect(0, 0, W, H); }
       // land flash
       if (t >= ev.land && t < ev.land + 0.3) { ctx.fillStyle = `rgba(155,232,191,${0.35 * Math.exp(-(t - ev.land) * 14)})`; ctx.fillRect(0, 0, W, H); }
 
@@ -500,9 +504,9 @@
         ctx.restore();
       }
       if (t >= ev.price) {
-        const d = t - ev.price, p = ease.outBack(clamp(d / 0.35), 2.4);
+        const d = t - ev.price, p = lerp(0.75, 1, ease.outBack(clamp(d / 0.2), 2.4));
         const px = 838, py = 930;
-        ctx.save(); ctx.translate(px, py); ctx.rotate(0.16 - 0.1 * (1 - clamp(d / 0.35))); ctx.scale(p, p);
+        ctx.save(); ctx.translate(px, py); ctx.rotate(0.16 - 0.1 * (1 - clamp(d / 0.2))); ctx.scale(p, p);
         const r = 118;
         ctx.shadowColor = 'rgba(0,0,0,0.7)'; ctx.shadowBlur = 50; ctx.shadowOffsetY = 20;
         const g = ctx.createRadialGradient(0, -40, 10, 0, 0, r); g.addColorStop(0, '#0f3d25'); g.addColorStop(1, '#020805');

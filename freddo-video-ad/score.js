@@ -83,7 +83,7 @@
     breath: ev.breath,
     drop: { t: ev.drop, sync: 'av' },
     price: { t: ev.price, sync: 'av' },
-    cta: { t: ev.cta, sync: 'a' },
+    cta: ev.cta,
     end: ev.end,
   };
 

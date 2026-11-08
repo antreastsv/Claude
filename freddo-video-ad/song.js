@@ -143,10 +143,12 @@ for (const n of sc.lead) {
 
 // ---------- price: ka-ching ----------
 fx.addMono(I.bell(m('G6') ? 1568 : 1568, 0.5), ev.price, 0.32, 0.3);
-fx.addMono(I.bell(2093, 0.7), ev.price + 0.07, 0.32, 0.35);
+fx.addMono(I.bell(2093, 0.7), ev.price + 0.12, 0.3, 0.35);
 fx.addMono(I.pop(2200, 9), ev.price, 0.4, 0.3);
-verb.addMono(I.bell(2093, 0.7), ev.price + 0.07, 0.15);
+verb.addMono(I.bell(2093, 0.7), ev.price + 0.12, 0.15);
 
+drums.addMono(I.clap({ spread: 0.004 }), ev.price, 0.7);
+fx.addMono(I.thud(140, 0.05), ev.price, 0.6);
 // ---------- CTA pop ----------
 fx.addMono(I.pop(1600, 12), ev.cta, 0.45);
 fx.addMono(I.marimba(m('A6'), { thock: 0.1 }), ev.cta, 0.25);
