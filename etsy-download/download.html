@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Neon Gate Away – Download</title>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Bungee&family=Neonderthaw&family=Poppins:wght@400;600;800&display=block" rel="stylesheet">
+<style>
+/* ===== EDIT THIS: your download link lives in the <a class="btn"> href below ===== */
+:root{--or:#ff7a1a;--or2:#ffb36b;--pu:#b44dff;--pu2:#e0a8ff;--ink:#0f0519;--paper:#fff}
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:210mm;height:297mm;background:var(--ink)}
+body{font-family:Poppins,sans-serif;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;width:210mm;height:297mm;overflow:hidden;
+  background:
+   radial-gradient(120mm 90mm at 10% 0%,rgba(180,77,255,.45),transparent 70%),
+   radial-gradient(120mm 100mm at 100% 100%,rgba(255,122,26,.38),transparent 70%),
+   radial-gradient(90mm 70mm at 95% 30%,rgba(180,77,255,.22),transparent 70%),
+   linear-gradient(160deg,#1c0833 0%,#0f0519 55%,#160612 100%)}
+/* retro grid floor */
+.grid{position:absolute;left:-20%;right:-20%;bottom:0;height:95mm;transform:perspective(60mm) rotateX(58deg);transform-origin:bottom;
+  background-image:linear-gradient(rgba(255,122,26,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(180,77,255,.55) 1px,transparent 1px);
+  background-size:12mm 12mm;opacity:.45;
+  -webkit-mask-image:linear-gradient(to top,#000 10%,transparent 95%);mask-image:linear-gradient(to top,#000 10%,transparent 95%)}
+.stars i{position:absolute;width:1.2mm;height:1.2mm;border-radius:50%;background:#fff;opacity:.6}
+
+/* neon sign header */
+.sign{position:absolute;top:12.5mm;left:0;right:0;text-align:center}
+.gate{display:block;margin:0 auto;width:135mm;height:auto;overflow:visible}
+.brand{font-family:Monoton,cursive;font-size:17mm;line-height:1;letter-spacing:1mm;margin-top:-44.5mm;color:#ffe9d6;
+  text-shadow:0 0 1mm #fff,0 0 3mm var(--or),0 0 7mm var(--or),0 0 14mm var(--or)}
+.brand2{font-family:Neonderthaw,cursive;font-size:19mm;line-height:.9;color:#f6e6ff;margin-top:1mm;
+  text-shadow:0 0 1mm #fff,0 0 3mm var(--pu),0 0 7mm var(--pu),0 0 14mm var(--pu)}
+
+/* thank-you sticker text */
+.thx{position:absolute;top:104mm;left:0;right:0;text-align:center;transform:rotate(-3deg)}
+.thx span{display:inline-block;font-family:Bungee,sans-serif;font-size:15mm;line-height:1.05;color:var(--or);
+  -webkit-text-stroke:1.6mm #fff;paint-order:stroke fill;
+  filter:drop-shadow(1.4mm 1.4mm 0 var(--pu)) drop-shadow(0 2mm 3mm rgba(0,0,0,.5))}
+.thx span.b{color:var(--pu);font-size:12.5mm;filter:drop-shadow(1.4mm 1.4mm 0 var(--or)) drop-shadow(0 2mm 3mm rgba(0,0,0,.5))}
+
+/* button */
+.cta{position:absolute;top:150mm;left:0;right:0;text-align:center}
+.btn{display:inline-flex;align-items:center;gap:5mm;padding:6.5mm 13mm;border-radius:20mm;text-decoration:none;
+  background:linear-gradient(90deg,var(--or),#ff4fa3 50%,var(--pu));color:#fff;font-family:Bungee,sans-serif;font-size:10.5mm;letter-spacing:.6mm;
+  border:1.6mm solid #fff;box-shadow:0 0 0 1.2mm var(--pu),0 0 9mm rgba(255,122,26,.75),0 0 18mm rgba(180,77,255,.6)}
+.btn svg{width:10mm;height:10mm}
+.hint{margin-top:5mm;font-size:3.6mm;color:var(--pu2);letter-spacing:.3mm}
+.hint b{color:var(--or2)}
+
+/* steps */
+.steps{position:absolute;top:189mm;left:22mm;right:22mm;display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}
+.step{background:rgba(255,255,255,.06);border:.5mm solid rgba(224,168,255,.35);border-radius:6mm;padding:5mm 4mm 5mm;text-align:center}
+.step .n{width:11mm;height:11mm;margin:0 auto 2.5mm;border-radius:50%;display:grid;place-items:center;font-family:Bungee;font-size:5mm;color:#fff;
+  background:var(--or);box-shadow:0 0 4mm rgba(255,122,26,.8)}
+.step:nth-child(2) .n{background:var(--pu);box-shadow:0 0 4mm rgba(180,77,255,.8)}
+.step h3{font-weight:800;font-size:4.3mm;letter-spacing:.2mm}
+.step p{font-size:3.2mm;line-height:1.45;color:#e9dcf5;margin-top:1.5mm}
+
+.note{position:absolute;top:236mm;left:24mm;right:24mm;text-align:center;font-size:3.4mm;line-height:1.6;color:#e9dcf5}
+.note b{color:var(--or2)}
+.foot{position:absolute;bottom:11mm;left:0;right:0;text-align:center;font-size:2.9mm;letter-spacing:.5mm;color:rgba(233,220,245,.75)}
+.foot .dot{color:var(--or)}
+
+/* die-cut stickers */
+.st{position:absolute;filter:drop-shadow(0 1.6mm 1.6mm rgba(0,0,0,.55))}
+</style></head>
+<body><div class="page">
+  <div class="grid"></div>
+  <div class="stars" id="stars"></div>
+
+  <!-- neon sign: an arch "gate" made of tubes -->
+  <div class="sign">
+    <svg class="gate" viewBox="-30 -30 540 360">
+      <defs>
+        <linearGradient id="fadeG" gradientUnits="userSpaceOnUse" x1="0" y1="200" x2="0" y2="325"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient><mask id="fadeM" maskUnits="userSpaceOnUse" x="-30" y="-30" width="540" height="360"><rect x="-30" y="-30" width="540" height="360" fill="url(#fadeG)"/></mask>
+        <filter id="glo" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <g mask="url(#fadeM)"><g fill="none" stroke-linecap="round" filter="url(#glo)">
+        <path d="M70 300 V170 A170 170 0 0 1 410 170 V300" stroke="#b44dff" stroke-width="9"/>
+        <path d="M70 300 V170 A170 170 0 0 1 410 170 V300" stroke="#f6e6ff" stroke-width="3"/>
+        <path d="M100 300 V172 A140 140 0 0 1 380 172 V300" stroke="#ff7a1a" stroke-width="7" stroke-dasharray="26 14"/>
+        <path d="M100 300 V172 A140 140 0 0 1 380 172 V300" stroke="#ffe9d6" stroke-width="2" stroke-dasharray="26 14"/>
+      </g></g>
+    </svg>
+    <div class="brand">NEON</div>
+    <div class="brand2">Gate Away</div>
+  </div>
+
+  <div class="thx"><span>THNX FOR THE</span><br><span class="b">DOWNLOAD!</span></div>
+
+  <div class="cta">
+    <a class="btn" href="https://YOUR-DOWNLOAD-LINK-HERE">DOWNLOAD HERE
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg></a>
+    <div class="hint">Tap the button to grab your <b>ZIP file</b> with all your stickers</div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Click</h3><p>Tap <b>Download Here</b> to open your files.</p></div>
+    <div class="step"><div class="n">2</div><h3>Download</h3><p>Save the <b>.zip</b> file to your computer.</p></div>
+    <div class="step"><div class="n">3</div><h3>Unzip &amp; Enjoy</h3><p>Extract the folder and start using your stickers.</p></div>
+  </div>
+
+  <div class="note">Trouble opening your files? Just send me a message on <b>Etsy</b> and I'll help right away.<br>
+  If you love your stickers, a <b>★★★★★ review</b> means the world to a small shop!</div>
+
+  <div class="foot">NEON GATE AWAY <span class="dot">●</span> FOR PERSONAL USE ONLY <span class="dot">●</span> PLEASE DO NOT RESELL OR SHARE THE FILES</div>
+
+  <!-- stickers -->
+  <!-- lightning -->
+  <svg class="st" style="left:12mm;top:96mm;width:30mm;transform:rotate(-14deg)" viewBox="0 0 100 140"><path d="M60 4 L14 78 H46 L34 136 L86 54 H54 Z" fill="#ff7a1a" stroke="#fff" stroke-width="9" stroke-linejoin="round"/><path d="M60 4 L14 78 H46 L34 136" fill="none" stroke="#ffb36b" stroke-width="3"/></svg>
+  <!-- heart -->
+  <svg class="st" style="right:13mm;top:100mm;width:28mm;transform:rotate(12deg)" viewBox="0 0 100 92"><path d="M50 86 C10 58 4 36 12 20 C22 2 44 6 50 22 C56 6 78 2 88 20 C96 36 90 58 50 86Z" fill="#b44dff" stroke="#fff" stroke-width="8" stroke-linejoin="round"/><ellipse cx="30" cy="28" rx="9" ry="5" fill="#e0a8ff" transform="rotate(-30 30 28)"/></svg>
+  <!-- star -->
+  <svg class="st" style="left:16mm;top:16mm;width:26mm;transform:rotate(-10deg)" viewBox="0 0 100 100"><path d="M50 4 L62 36 L96 38 L69 59 L78 93 L50 74 L22 93 L31 59 L4 38 L38 36Z" fill="#ffb36b" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+  <!-- palm sunset circle -->
+  <svg class="st" style="right:14mm;top:16mm;width:32mm;transform:rotate(9deg)" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="#fff"/>
+    <defs><linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#b44dff"/></linearGradient><clipPath id="cc"><circle cx="50" cy="50" r="40"/></clipPath></defs>
+    <circle cx="50" cy="50" r="40" fill="url(#sun)"/>
+    <g clip-path="url(#cc)" fill="#2a0b45"><rect x="10" y="62" width="80" height="4"/><rect x="10" y="71" width="80" height="6"/><rect x="10" y="82" width="80" height="10"/>
+      <path d="M55 92 Q58 60 52 40 L55 40 Q62 62 59 92Z"/><path d="M53 40 Q38 28 24 36 Q38 30 53 42Z M53 40 Q66 26 80 34 Q66 30 54 42Z M53 40 Q46 22 34 18 Q48 24 54 41Z M54 40 Q62 22 74 20 Q60 26 55 41Z"/></g>
+  </svg>
+  <!-- sparkle -->
+  <svg class="st" style="left:9mm;top:153mm;width:16mm;transform:rotate(8deg)" viewBox="0 0 100 100"><path d="M50 2 C54 38 62 46 98 50 C62 54 54 62 50 98 C46 62 38 54 2 50 C38 46 46 38 50 2Z" fill="#e0a8ff" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+  <!-- zip folder -->
+  <svg class="st" style="right:6mm;top:150mm;width:22mm;transform:rotate(-8deg)" viewBox="0 0 110 90">
+    <path d="M6 16 a8 8 0 0 1 8-8 h28 l10 10 h44 a8 8 0 0 1 8 8 v50 a8 8 0 0 1-8 8 H14 a8 8 0 0 1-8-8Z" fill="#ff7a1a" stroke="#fff" stroke-width="7" stroke-linejoin="round"/>
+    <g fill="#2a0b45"><rect x="50" y="28" width="8" height="5"/><rect x="58" y="34" width="8" height="5"/><rect x="50" y="40" width="8" height="5"/><rect x="58" y="46" width="8" height="5"/><rect x="50" y="52" width="16" height="12" rx="2"/></g>
+    <text x="22" y="72" font-family="Bungee" font-size="15" fill="#fff">ZIP</text>
+  </svg>
+  <!-- smiley -->
+  <svg class="st" style="left:14mm;top:254mm;width:21mm;transform:rotate(-12deg)" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#b44dff" stroke="#fff" stroke-width="8"/><circle cx="36" cy="40" r="6" fill="#fff"/><circle cx="64" cy="40" r="6" fill="#fff"/><path d="M30 60 Q50 80 70 60" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/></svg>
+  <!-- moon -->
+  <svg class="st" style="right:15mm;top:252mm;width:21mm;transform:rotate(14deg)" viewBox="0 0 100 100"><path d="M64 6 A46 46 0 1 0 94 70 A38 38 0 1 1 64 6Z" fill="#ffb36b" stroke="#fff" stroke-width="8" stroke-linejoin="round"/></svg>
+</div>
+<script>
+let s=9;const r=()=>(s=(s*16807)%2147483647)/2147483647;let h='';
+for(let i=0;i<55;i++){h+=`<i style="left:${r()*100}%;top:${r()*62}%;opacity:${.2+r()*.6};transform:scale(${.4+r()})"></i>`}
+document.getElementById('stars').innerHTML=h;
+</script>
+</body></html>
