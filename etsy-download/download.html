@@ -1,91 +1,117 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <title>Neon Getaway – Download</title>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;600;800&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Knewave&family=Permanent+Marker&family=Bungee&family=Poppins:wght@400;600;800&display=block" rel="stylesheet">
 <style>
 /* =====================================================================
    YOUR DOWNLOAD LINKS: replace the three href="..." values on the
    <a class="btn"> buttons below (search for LINK-PACK-1 / 2 / 3).
+   Style taken from the Neon Getaway logo: black night, hot pink,
+   sunset orange, white sticker outlines, brush lettering, palms.
    ===================================================================== */
-:root{--or:#ff7a1a;--or2:#ffb36b;--pu:#a94dff;--pu2:#dcb2ff;--pink:#ff2d95;--ink:#0f0519}
+:root{--pink:#ff1f8f;--pink2:#ff5fb0;--or:#ff9a1f;--or2:#ffc15a;--pu:#7a1fa8;--ink:#050205}
 @page{size:A4;margin:0}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:210mm;height:297mm;background:var(--ink)}
 body{font-family:Poppins,sans-serif;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{position:relative;width:210mm;height:297mm;overflow:hidden;
   background:
-   radial-gradient(110mm 80mm at 50% 14%,rgba(255,122,26,.30),transparent 70%),
-   radial-gradient(120mm 90mm at 0% 0%,rgba(169,77,255,.50),transparent 70%),
-   radial-gradient(120mm 100mm at 100% 100%,rgba(255,122,26,.35),transparent 70%),
-   radial-gradient(90mm 80mm at 100% 35%,rgba(169,77,255,.25),transparent 70%),
-   linear-gradient(165deg,#1d0836 0%,#0f0519 55%,#170615 100%)}
-.grid{position:absolute;left:-20%;right:-20%;bottom:0;height:80mm;transform:perspective(60mm) rotateX(58deg);transform-origin:bottom;
-  background-image:linear-gradient(rgba(255,122,26,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(169,77,255,.6) 1px,transparent 1px);
-  background-size:12mm 12mm;opacity:.4;-webkit-mask-image:linear-gradient(to top,#000 10%,transparent 95%);mask-image:linear-gradient(to top,#000 10%,transparent 95%)}
-.stars i{position:absolute;width:1.1mm;height:1.1mm;border-radius:50%;background:#fff}
+   radial-gradient(95mm 70mm at 50% 12%,rgba(255,31,143,.22),transparent 70%),
+   radial-gradient(140mm 70mm at 50% 104%,rgba(255,90,40,.45),transparent 70%),
+   radial-gradient(90mm 70mm at 0% 40%,rgba(122,31,168,.22),transparent 70%),
+   radial-gradient(90mm 70mm at 100% 55%,rgba(122,31,168,.2),transparent 70%),
+   #050205}
+.stars i{position:absolute;width:1mm;height:1mm;border-radius:50%;background:#fff}
 
-.logo{position:absolute;top:9mm;left:50%;width:96mm;transform:translateX(-50%);
-  filter:drop-shadow(0 0 5mm rgba(169,77,255,.75)) drop-shadow(0 2mm 3mm rgba(0,0,0,.6))}
+.logo{position:absolute;top:6mm;left:50%;width:108mm;transform:translateX(-50%);
+  filter:drop-shadow(0 0 6mm rgba(255,31,143,.55)) drop-shadow(0 2mm 3mm rgba(0,0,0,.7))}
 
-.thx{position:absolute;top:84mm;left:0;right:0;text-align:center;transform:rotate(-2.5deg)}
-.thx span{display:inline-block;font-family:Bungee,sans-serif;font-size:13.5mm;line-height:1.05;color:var(--or);
-  -webkit-text-stroke:1.5mm #fff;paint-order:stroke fill;filter:drop-shadow(1.3mm 1.3mm 0 var(--pu)) drop-shadow(0 2mm 3mm rgba(0,0,0,.5))}
-.thx span.b{color:var(--pu);font-size:11.5mm;filter:drop-shadow(1.3mm 1.3mm 0 var(--or)) drop-shadow(0 2mm 3mm rgba(0,0,0,.5))}
+/* brush headline, like the logo lettering */
+.thx{position:absolute;top:81mm;left:0;right:0;text-align:center;transform:rotate(-4deg)}
+.thx .a{display:block;font-family:'Permanent Marker',cursive;font-size:12mm;line-height:1;color:#fff;letter-spacing:.4mm;
+  text-shadow:.6mm .6mm 0 #000;filter:drop-shadow(0 0 2mm rgba(255,31,143,.5))}
+.thx .b{display:inline-block;font-family:Knewave,cursive;font-size:19mm;line-height:1.05;color:var(--pink);margin-top:-1mm;
+  -webkit-text-stroke:1.6mm #fff;paint-order:stroke fill;filter:drop-shadow(0 0 4mm rgba(255,31,143,.75)) drop-shadow(0 1.5mm 0 #000)}
+.thx .swoosh{display:block;margin:-3mm auto 0;width:118mm;height:7mm}
 
 /* pack cards */
-.packs{position:absolute;top:122mm;left:14mm;right:14mm;display:flex;flex-direction:column;gap:5mm}
-.pack{position:relative;height:35mm;border-radius:7mm;display:flex;align-items:center;padding:0 6mm;
-  background:linear-gradient(100deg,rgba(169,77,255,.22),rgba(255,255,255,.05) 45%,rgba(255,122,26,.16));
-  border:.5mm solid rgba(220,178,255,.45);box-shadow:inset 0 0 8mm rgba(169,77,255,.15)}
-.pack:nth-child(2){background:linear-gradient(100deg,rgba(255,122,26,.2),rgba(255,255,255,.05) 45%,rgba(169,77,255,.2))}
+.packs{position:absolute;top:118mm;left:13mm;right:13mm;display:flex;flex-direction:column;gap:3.5mm}
+.pack{position:relative;height:31mm;border-radius:6mm;display:flex;align-items:center;padding:0 5.5mm;
+  background:linear-gradient(100deg,rgba(255,31,143,.16),rgba(20,8,16,.9) 40%,rgba(255,154,31,.12));
+  border:.7mm solid var(--pink);box-shadow:0 0 0 .9mm #fff,0 0 6mm rgba(255,31,143,.55),inset 0 0 7mm rgba(255,31,143,.18)}
 .info{width:44mm;flex:none}
-.info .k{font-family:Bungee;font-size:3mm;letter-spacing:.6mm;color:var(--or2)}
-.info h2{font-family:Bungee;font-size:7.4mm;line-height:1.05;margin-top:.8mm}
-.info p{font-size:2.9mm;color:var(--pu2);margin-top:1.2mm}
-.thumbs{position:relative;flex:1;height:35mm}
-.thumbs img{position:absolute;top:50%;height:21mm;width:auto;max-width:21mm;object-fit:contain;filter:drop-shadow(0 1.2mm 1.2mm rgba(0,0,0,.6))}
-.btn{position:relative;z-index:2;flex:none;display:inline-flex;align-items:center;gap:2.6mm;padding:3.6mm 6mm;border-radius:20mm;text-decoration:none;
-  background:linear-gradient(90deg,var(--or),var(--pink) 55%,var(--pu));color:#fff;font-family:Bungee,sans-serif;font-size:4.6mm;letter-spacing:.3mm;
-  border:1mm solid #fff;box-shadow:0 0 0 .8mm var(--pu),0 0 6mm rgba(255,122,26,.7),0 0 12mm rgba(169,77,255,.5)}
+.info .k{font-family:Bungee;font-size:2.8mm;letter-spacing:.6mm;color:var(--or2)}
+.info h2{font-family:Knewave,cursive;font-weight:400;font-size:8.6mm;line-height:1;margin-top:.6mm;color:#fff;text-shadow:.5mm .5mm 0 var(--pink)}
+.info p{font-size:2.8mm;color:#ffd0e8;margin-top:1.2mm}
+.thumbs{position:relative;flex:1;height:31mm}
+.thumbs img{position:absolute;top:50%;height:20mm;width:auto;max-width:20mm;object-fit:contain;filter:drop-shadow(0 1.2mm 1.2mm rgba(0,0,0,.7))}
+.btn{position:relative;z-index:2;flex:none;display:inline-flex;align-items:center;gap:2.6mm;padding:3.4mm 5.6mm;border-radius:20mm;text-decoration:none;
+  background:linear-gradient(90deg,var(--or),var(--pink) 60%);color:#fff;font-family:Bungee,sans-serif;font-size:4.5mm;letter-spacing:.3mm;
+  border:1mm solid #fff;box-shadow:0 0 0 .7mm #000,0 0 7mm rgba(255,31,143,.7);text-shadow:0 .4mm 0 rgba(0,0,0,.35)}
 .btn svg{width:5mm;height:5mm}
 
-.steps{position:absolute;top:248mm;left:0;right:0;display:flex;justify-content:center;gap:4mm}
-.steps div{display:flex;align-items:center;gap:2mm;font-weight:600;font-size:3.3mm;padding:2mm 4mm 2mm 2mm;border-radius:10mm;background:rgba(255,255,255,.07);border:.4mm solid rgba(220,178,255,.35)}
-.steps b{width:6.5mm;height:6.5mm;border-radius:50%;display:grid;place-items:center;font-family:Bungee;font-size:3.2mm;background:var(--or);box-shadow:0 0 3mm rgba(255,122,26,.8)}
-.steps div:nth-child(2) b{background:var(--pu);box-shadow:0 0 3mm rgba(169,77,255,.8)}
-.note{position:absolute;top:262mm;left:30mm;right:30mm;text-align:center;font-size:3.2mm;line-height:1.6;color:#eadcf7}
+.steps{position:absolute;top:224.5mm;left:0;right:0;display:flex;justify-content:center;gap:3.5mm}
+.steps div{display:flex;align-items:center;gap:2mm;font-weight:600;font-size:3.2mm;padding:1.8mm 4mm 1.8mm 1.8mm;border-radius:10mm;background:rgba(255,255,255,.06);border:.4mm solid rgba(255,95,176,.5)}
+.steps b{width:6.2mm;height:6.2mm;border-radius:50%;display:grid;place-items:center;font-family:Bungee;font-size:3.1mm;background:var(--pink);box-shadow:0 0 3mm rgba(255,31,143,.9)}
+.steps div:nth-child(2) b{background:var(--or);box-shadow:0 0 3mm rgba(255,154,31,.9)}
+.note{position:absolute;top:235mm;left:28mm;right:28mm;text-align:center;font-size:3.1mm;line-height:1.55;color:#f3dce9}
 .note b{color:var(--or2)}
-.foot{position:absolute;bottom:8mm;left:0;right:0;text-align:center;font-size:2.7mm;letter-spacing:.45mm;color:rgba(234,220,247,.75)}
-.foot .dot{color:var(--or)}
-.deco{position:absolute;filter:drop-shadow(0 1.5mm 1.5mm rgba(0,0,0,.6))}
+
+.scene{position:absolute;left:0;bottom:0;width:210mm;height:62mm}
+.foot{position:absolute;bottom:4.5mm;left:0;right:0;text-align:center;font-size:2.6mm;letter-spacing:.45mm;color:rgba(255,220,236,.8)}
+.foot .dot{color:var(--pink)}
+.deco{position:absolute;filter:drop-shadow(0 1.5mm 1.5mm rgba(0,0,0,.7))}
 </style></head>
 <body><div class="page">
-  <div class="grid"></div>
   <div class="stars" id="stars"></div>
 
-  <!-- decoration stickers -->
-  <img class="deco" src="assets/d_palm.png"  style="left:6mm;top:12mm;width:38mm;transform:rotate(-10deg)">
-  <img class="deco" src="assets/d_heli.png"  style="right:6mm;top:14mm;width:38mm;transform:rotate(9deg)">
-  <img class="deco" src="assets/d_money.png" style="left:5mm;top:76mm;width:30mm;transform:rotate(-14deg)">
-  <img class="deco" src="assets/d_car.png"   style="right:4mm;top:74mm;width:34mm;transform:rotate(10deg)">
+  <!-- the logo's sunset + skyline + palms, stretched across the bottom of the page -->
+  <svg class="scene" viewBox="0 0 2100 620" preserveAspectRatio="xMidYMax slice">
+    <defs>
+      <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb21f"/><stop offset=".45" stop-color="#ff6a2b"/><stop offset="1" stop-color="#ff1f8f"/></linearGradient>
+      <clipPath id="sunClip"><circle cx="1050" cy="520" r="380"/></clipPath>
+      <linearGradient id="refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff1f8f" stop-opacity=".7"/><stop offset="1" stop-color="#ff1f8f" stop-opacity="0"/></linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="18"/></filter>
+    </defs>
+    <circle cx="1050" cy="520" r="400" fill="#ff1f8f" opacity=".35" filter="url(#glow)"/>
+    <g clip-path="url(#sunClip)">
+      <rect x="600" y="100" width="900" height="420" fill="url(#sun)"/>
+      <g fill="#050205" id="bands"></g>
+    </g>
+    <g id="skyline" fill="#050205"></g>
+    <g id="palms"></g>
+    <rect x="0" y="520" width="2100" height="100" fill="#050205"/>
+    <rect x="0" y="518" width="2100" height="4" fill="#ff5fb0"/>
+    <g id="reflect"></g>
+  </svg>
+
+  <!-- your stickers as decoration -->
+  <img class="deco" src="assets/d_palm.png"  style="left:5mm;top:10mm;width:36mm;transform:rotate(-10deg)">
+  <img class="deco" src="assets/d_heli.png"  style="right:5mm;top:12mm;width:36mm;transform:rotate(9deg)">
+  <img class="deco" src="assets/d_money.png" style="left:6mm;top:72mm;width:27mm;transform:rotate(-14deg)">
+  <img class="deco" src="assets/d_car.png"   style="right:5mm;top:70mm;width:31mm;transform:rotate(10deg)">
 
   <img class="logo" src="assets/logo.png" alt="Neon Getaway">
 
-  <div class="thx"><span>THNX FOR THE</span><br><span class="b">DOWNLOAD!</span></div>
+  <div class="thx">
+    <span class="a">THNX FOR THE</span>
+    <span class="b">Download!</span>
+    <svg class="swoosh" viewBox="0 0 400 24"><path d="M10 16 C120 2 260 4 392 10 L330 14 C250 12 150 14 40 22Z" fill="#ff1f8f" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+  </div>
 
   <div class="packs">
     <div class="pack">
-      <div class="info"><div class="k">ZIP FILE 01</div><h2>STICKER<br>PACK 1</h2><p>11 high-res PNG stickers</p></div>
+      <div class="info"><div class="k">ZIP FILE 01</div><h2>Sticker Pack 1</h2><p>11 high-res PNG stickers</p></div>
       <div class="thumbs"><img src="assets/p1a.png" style="left:0;transform:translateY(-50%) rotate(-8deg)"><img src="assets/p1b.png" style="left:13mm;transform:translateY(-50%) rotate(6deg)"><img src="assets/p1c.png" style="left:26mm;transform:translateY(-50%) rotate(-4deg)"><img src="assets/p1d.png" style="left:39mm;transform:translateY(-50%) rotate(8deg)"></div>
       <a class="btn" href="https://LINK-PACK-1">DOWNLOAD HERE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg></a>
     </div>
     <div class="pack">
-      <div class="info"><div class="k">ZIP FILE 02</div><h2>STICKER<br>PACK 2</h2><p>11 high-res PNG stickers</p></div>
+      <div class="info"><div class="k">ZIP FILE 02</div><h2>Sticker Pack 2</h2><p>11 high-res PNG stickers</p></div>
       <div class="thumbs"><img src="assets/p2a.png" style="left:0;transform:translateY(-50%) rotate(-6deg)"><img src="assets/p2b.png" style="left:13mm;transform:translateY(-50%) rotate(5deg)"><img src="assets/p2c.png" style="left:26mm;transform:translateY(-50%) rotate(-5deg)"><img src="assets/p2d.png" style="left:39mm;transform:translateY(-50%) rotate(7deg)"></div>
       <a class="btn" href="https://LINK-PACK-2">DOWNLOAD HERE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg></a>
     </div>
     <div class="pack">
-      <div class="info"><div class="k">ZIP FILE 03</div><h2>STICKER<br>PACK 3</h2><p>12 high-res PNG stickers</p></div>
+      <div class="info"><div class="k">ZIP FILE 03</div><h2>Sticker Pack 3</h2><p>12 high-res PNG stickers</p></div>
       <div class="thumbs"><img src="assets/p3a.png" style="left:0;transform:translateY(-50%) rotate(-7deg)"><img src="assets/p3b.png" style="left:13mm;transform:translateY(-50%) rotate(5deg)"><img src="assets/p3c.png" style="left:26mm;transform:translateY(-50%) rotate(-5deg)"><img src="assets/p3d.png" style="left:39mm;transform:translateY(-50%) rotate(8deg)"></div>
       <a class="btn" href="https://LINK-PACK-3">DOWNLOAD HERE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg></a>
     </div>
@@ -93,11 +119,46 @@ body{font-family:Poppins,sans-serif;color:#fff;-webkit-print-color-adjust:exact;
 
   <div class="steps"><div><b>1</b>Tap Download Here</div><div><b>2</b>Save the .zip</div><div><b>3</b>Unzip &amp; enjoy</div></div>
   <div class="note">Trouble with your files? Message me on <b>Etsy</b> and I'll help right away.<br>Loving your stickers? A <b>★★★★★ review</b> means the world to a small shop!</div>
+
   <div class="foot">NEON GETAWAY <span class="dot">●</span> FOR PERSONAL USE ONLY <span class="dot">●</span> PLEASE DO NOT RESELL OR SHARE THE FILES</div>
 </div>
 <script>
-let s=9;const r=()=>(s=(s*16807)%2147483647)/2147483647;let h='';
-for(let i=0;i<55;i++){h+=`<i style="left:${r()*100}%;top:${r()*60}%;opacity:${.2+r()*.6};transform:scale(${.4+r()})"></i>`}
+// seeded random so every render is identical
+let s=11;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+let h='';for(let i=0;i<60;i++){h+=`<i style="left:${r()*100}%;top:${r()*70}%;opacity:${.15+r()*.55};transform:scale(${.4+r()})"></i>`}
 document.getElementById('stars').innerHTML=h;
+const NS='http://www.w3.org/2000/svg',el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+// sun bands: black stripes that get thicker toward the horizon
+const bands=document.getElementById('bands');
+for(let i=0;i<7;i++){const y=330+i*30+i*i*1.5,hgt=4+i*3.2;bands.appendChild(el('rect',{x:600,y,width:900,height:hgt}))}
+// skyline
+const sky=document.getElementById('skyline');let x=720;
+while(x<1380){const w=26+r()*44,hh=60+r()*150*(1-Math.abs(x-1050)/420);sky.appendChild(el('rect',{x,y:520-hh,width:w,height:hh}));
+  for(let wy=520-hh+12;wy<510;wy+=18)for(let wx=x+6;wx<x+w-8;wx+=12)if(r()<.28)sky.appendChild(el('rect',{x:wx,y:wy,width:5,height:7,fill:r()<.5?'#ff9a1f':'#ff5fb0'}));
+  x+=w+4+r()*6}
+// palms (black silhouettes with a hot-pink rim, like the logo)
+function palm(px,base,height,lean,scale,flip){
+  const g=el('g',{transform:`translate(${px} ${base}) scale(${flip?-scale:scale} ${scale})`});
+  const tx=lean,ty=-height;
+  const trunk=`M-14 0 C-10 ${ty*.4} ${tx*.5-8} ${ty*.75} ${tx-6} ${ty} L${tx+6} ${ty} C${tx*.5+8} ${ty*.75} 10 ${ty*.4} 14 0Z`;
+  const fr=[];const N=8;
+  for(let i=0;i<N;i++){const a=-Math.PI*0.95+i*(Math.PI*0.9/(N-1))+(r()-.5)*.15,L=150+r()*60,droop=0.55+r()*.3;
+    const ex=tx+Math.cos(a)*L,ey=ty+Math.sin(a)*L*0.55+L*droop*.6,cx=tx+Math.cos(a)*L*.55,cy=ty+Math.sin(a)*L*.55-30;
+    // serrated leaf: upper curve to tip, jagged lower edge back
+    let d=`M${tx} ${ty} Q${cx} ${cy-14} ${ex} ${ey}`;const teeth=9;
+    for(let k=teeth;k>=1;k--){const u=k/teeth,qx=(1-u)*(1-u)*tx+2*(1-u)*u*cx+u*u*ex,qy=(1-u)*(1-u)*ty+2*(1-u)*u*(cy+16)+u*u*ey;
+      const nx=-Math.sin(a)*0.0,off=14*(1-u)+6;d+=` L${qx+(k%2?off*.4:0)} ${qy+(k%2?off:off*.3)}`}
+    d+=' Z';fr.push(d)}
+  const all=[trunk,...fr];
+  for(const d of all)g.appendChild(el('path',{d,fill:'none',stroke:'#ff1f8f','stroke-width':10,'stroke-linejoin':'round'}));
+  for(const d of all)g.appendChild(el('path',{d,fill:'#050205'}));
+  // trunk rings
+  for(let k=1;k<9;k++){const u=k/9;g.appendChild(el('path',{d:`M${-12+tx*u*u} ${ty*u} q12 6 24 0`,stroke:'#ff5fb0','stroke-width':3,fill:'none',opacity:.6}))}
+  document.getElementById('palms').appendChild(g)}
+palm(250,522,330,40,1.15,false);palm(420,522,250,-30,0.9,false);
+palm(1850,522,340,40,1.15,true);palm(1680,522,240,-30,0.85,true);
+// reflection lines under the horizon
+const rf=document.getElementById('reflect');
+for(let i=0;i<5;i++){const w=560-i*90;rf.appendChild(el('rect',{x:1050-w/2,y:532+i*14,width:w,height:4,fill:'url(#refl)',opacity:1-i*.17}))}
 </script>
 </body></html>
